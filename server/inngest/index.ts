@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import { prisma } from "../config/prisma.ts";
+import { prisma } from "../config/prisma";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "project-management" });
