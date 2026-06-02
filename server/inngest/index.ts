@@ -61,7 +61,7 @@ const syncUserUpdation = inngest.createFunction(
 // Inngest Function to save workspace data to a database
 const syncWorkspaceCreation = inngest.createFunction(
   {
-    id: "create-workspace-from-clerk",
+    id: "sync-workspace-from-clerk",
     triggers: [{ event: "clerk/workspace.created" }],
   },
 
@@ -133,7 +133,7 @@ const syncWorkspaceDeletion = inngest.createFunction(
 // Inngest Function to save workspace member data to a database
 const syncWorkspaceMemberCreation = inngest.createFunction(
   {
-    id: "create-workspace-member-from-clerk",
+    id: "sync-workspace-member-from-clerk",
     triggers: [{ event: "clerk/workspaceMember.created" }],
   },
 
