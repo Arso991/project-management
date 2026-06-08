@@ -62,7 +62,7 @@ const syncUserUpdation = inngest.createFunction(
 const syncWorkspaceCreation = inngest.createFunction(
   {
     id: "sync-workspace-from-clerk",
-    triggers: [{ event: "clerk/workspace.created" }],
+    triggers: [{ event: "clerk/organization.created" }],
   },
 
   async ({ event }) => {
@@ -93,7 +93,7 @@ const syncWorkspaceCreation = inngest.createFunction(
 const syncWorkspaceUpdation = inngest.createFunction(
   {
     id: "update-workspace-from-clerk",
-    triggers: [{ event: "clerk/workspace.updated" }],
+    triggers: [{ event: "clerk/organization.updated" }],
   },
 
   async ({ event }) => {
@@ -115,8 +115,8 @@ const syncWorkspaceUpdation = inngest.createFunction(
 // Inngest Function to delete workspace data from database
 const syncWorkspaceDeletion = inngest.createFunction(
   {
-    id: "delete-workspace-from-clerk",
-    triggers: [{ event: "clerk/workspace.deleted" }],
+    id: "delete-workspace-with-clerk",
+    triggers: [{ event: "clerk/organization.deleted" }],
   },
 
   async ({ event }) => {
@@ -134,7 +134,7 @@ const syncWorkspaceDeletion = inngest.createFunction(
 const syncWorkspaceMemberCreation = inngest.createFunction(
   {
     id: "sync-workspace-member-from-clerk",
-    triggers: [{ event: "clerk/workspaceMember.created" }],
+    triggers: [{ event: "clerk/organizationInvitation.accepted" }],
   },
 
   async ({ event }) => {
