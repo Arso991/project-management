@@ -10,8 +10,6 @@ export const fetchWorkspaces = createAsyncThunk(
         headers: { Authorization: `Bearer ${await getToken()}` },
       });
 
-      console.log("Workspaces " + data);
-
       return data.workspaces || [];
     } catch (error) {
       console.log(error?.response?.data?.message || error.message);

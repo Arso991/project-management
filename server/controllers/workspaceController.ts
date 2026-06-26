@@ -25,7 +25,7 @@ export const getUserWorkspaces = async (req, res) => {
       },
     });
 
-    res.json(workspaces);
+    res.json({ workspaces });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.code || error.message });
@@ -90,7 +90,7 @@ export const addMember = async (req, res) => {
       } as WorkspaceMember,
     });
 
-    res.json(member, { message: "Member successfuly created" });
+    res.json({ member, message: "Member successfuly created" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.code || error.message });
