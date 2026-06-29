@@ -62,7 +62,7 @@ export const createProject = async (req, res) => {
     if (team_members?.length > 0) {
       const membersToAdd = [];
       workspace.members.forEach((member) => {
-        if (team_members.include(member.user.email)) {
+        if (team_members.includes(member.user.email)) {
           membersToAdd.push(member.user.id);
         }
       });
@@ -201,8 +201,8 @@ export const addMember = async (req, res) => {
 
     const member = await prisma.projectMember.create({
       data: {
-        userId: userId,
-        projectId,
+        userId: user.id,
+        projectId: projectId,
       },
     });
 
